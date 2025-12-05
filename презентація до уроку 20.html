@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 20: Табличний процесор</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/blood.min.css">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+        .cell-demo { 
+            display: grid; 
+            grid-template-columns: 50px 100px 100px 100px; 
+            gap: 2px; 
+            background: #444; 
+            padding: 5px; 
+            width: fit-content; 
+            margin: 20px auto;
+        }
+        .cell-item { 
+            background: #fff; 
+            color: #000; 
+            padding: 10px; 
+            text-align: center;
+        }
+        .header { background: #ddd; font-weight: bold; }
+        .highlight { background: yellow; color: red; font-weight: bold; }
+        .green-text { color: #a6e22e; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Титульний слайд -->
+            <section>
+                <h1>Інформатика 6 клас</h1>
+                <h3>Тема: Електронні таблиці. Інтерфейс.</h3>
+                <p><small>Урок №20. За підручником Ривкінд Й.Я.</small></p>
+            </section>
+
+            <!-- Мотивація -->
+            <section>
+                <h2>Проблема 🤔</h2>
+                <p>Власник магазину має 1000 чеків за день.</p>
+                <div style="display: flex; justify-content: space-around; align-items: center;">
+                    <div class="fragment">
+                        <h4>Людина 🙍‍♂️</h4>
+                        <p>Рахує 3 години.<br>Може помилитися.</p>
+                    </div>
+                    <div class="fragment" style="font-size: 2em;">VS</div>
+                    <div class="fragment">
+                        <h4>Комп'ютер 💻</h4>
+                        <p>Рахує 1 секунду.<br>Не помиляється.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Визначення -->
+            <section>
+                <h2>Табличний процесор</h2>
+                <p>Це програма для опрацювання даних, поданих у таблицях.</p>
+                <ul>
+                    <li class="fragment">Microsoft Excel 🟩</li>
+                    <li class="fragment">Google Таблиці ☁️</li>
+                    <li class="fragment">LibreOffice Calc 🐧</li>
+                </ul>
+            </section>
+
+            <!-- Будова вікна -->
+            <section>
+                <section>
+                    <h2>Інтерфейс програми</h2>
+                    <p>З чого складається таблиця?</p>
+                </section>
+                
+                <section>
+                    <h3>Стовпці (Columns) ⬇️</h3>
+                    <p>Позначаються ЛАТИНСЬКИМИ літерами:</p>
+                    <h1 class="green-text">A, B, C, ... Z, AA, AB...</h1>
+                </section>
+
+                <section>
+                    <h3>Рядки (Rows) ➡️</h3>
+                    <p>Позначаються ЦИФРАМИ:</p>
+                    <h1 class="green-text">1, 2, 3, 4, ... 1000...</h1>
+                </section>
+
+                <section>
+                    <h3>Клітинка (Cell) 🔲</h3>
+                    <p>Це перетин стовпця і рядка.</p>
+                    <p>Адреса клітинки = <span style="color: yellow">Літера</span> + <span style="color: cyan">Цифра</span></p>
+                    <h2 class="fragment">B5, A1, D10</h2>
+                    <p class="fragment" style="color: red; text-decoration: line-through;">5B, 1A</p>
+                </section>
+            </section>
+
+            <!-- Демонстрація -->
+            <section>
+                <h2>Знайди адресу!</h2>
+                <div class="cell-demo">
+                    <div class="cell-item header"></div>
+                    <div class="cell-item header">A</div>
+                    <div class="cell-item header">B</div>
+                    <div class="cell-item header">C</div>
+
+                    <div class="cell-item header">1</div>
+                    <div class="cell-item"></div>
+                    <div class="cell-item"></div>
+                    <div class="cell-item"></div>
+
+                    <div class="cell-item header">2</div>
+                    <div class="cell-item"></div>
+                    <div class="cell-item highlight">ТУТ</div>
+                    <div class="cell-item"></div>
+
+                    <div class="cell-item header">3</div>
+                    <div class="cell-item"></div>
+                    <div class="cell-item"></div>
+                    <div class="cell-item"></div>
+                </div>
+                <p class="fragment">Це клітинка <strong>B2</strong>!</p>
+            </section>
+
+            <!-- Типи даних -->
+            <section>
+                <h2>Що можна писати в клітинку?</h2>
+                <ul>
+                    <li class="fragment"><strong>Текст:</strong> "Школа", "Клас", "Ціна" (Комп'ютер не може їх додавати).</li>
+                    <li class="fragment"><strong>Число:</strong> 12, 5.5, -100 (З ними можна робити обчислення).</li>
+                    <li class="fragment"><strong>Формула:</strong> Починається з <code>=</code> (Наприклад: <code>=2+2</code>).</li>
+                </ul>
+            </section>
+
+            <!-- Практична робота -->
+            <section>
+                <h2>Практична робота 🖥️</h2>
+                <h3>"Мій сніданок"</h3>
+                <ol style="font-size: 0.8em;">
+                    <li>Відкрити Excel.</li>
+                    <li>Ввести назви продуктів у стовпець A.</li>
+                    <li>Ввести ціни у стовпець B (лише цифри!).</li>
+                    <li>Зберегти файл.</li>
+                </ol>
+                <br>
+                <div class="fragment" style="border: 2px solid yellow; padding: 10px;">
+                    ⚠️ Не пишіть "грн" біля чисел, інакше вони стануть текстом!
+                </div>
+            </section>
+
+            <!-- Домашнє завдання -->
+            <section>
+                <h2>Домашнє завдання 🏠</h2>
+                <ol>
+                    <li>Читати § 6.1.</li>
+                    <li>Знайти вдома чек з магазину.</li>
+                    <li>Визначити, де там текст, а де числа.</li>
+                </ol>
+                <h3 style="margin-top: 50px; color: #a6e22e;">Дякую за увагу!</h3>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            transition: 'zoom' // none/fade/slide/convex/concave/zoom
+        });
+    </script>
+</body>
+</html>
